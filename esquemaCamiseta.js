@@ -40,6 +40,18 @@ const camisetaSchema = new Schema({
     default: '#ffffff'
   },
 
+  BolsilloColor: {
+    type: String,
+    required: true,
+    default: '#ffffff'
+  },
+
+  TapetaFrontalColor: {
+    type: String,
+    required: true,
+    default: '#ffffff'
+  },
+
   votos: {
     type: Number,
     default: 0

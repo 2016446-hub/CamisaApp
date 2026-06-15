@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="stylelogin.css">
 </head>
 <body>
-    <h2>Escriba su nombre</h2>
-    <input type="text" id="nombre" placeholder="Escriba su nombre">
 
-    <h2>Escriba su correo</h2>
-    <input type="email" id="correo" placeholder="Escriba su correo">
+    <div class="hero">
+        <h1>Registro de usuario</h1>
+        <p>Por favor, complete los siguientes campos para registrarse.</p>
+    </div>
+    <main class="contenedor">
+        <h2>Escriba su nombre</h2>
+        <input type="text" id="nombre" placeholder="Escriba su nombre">
 
-    <h2>Escriba su clave</h2>
-    <input type="password" id="clave" placeholder="Escriba su clave">
+        <h2>Escriba su correo</h2>
+        <input type="email" id="correo" placeholder="Escriba su correo">
 
-    <input type="button" id="btn-guardar" value="Registrarse">
+        <h2>Escriba su clave</h2>
+        <input type="password" id="clave" placeholder="Escriba su clave">
+
+        <input type="button" id="btn-guardar" value="Registrarse">
+    </main>
     <script>
         const btnGuardar = document.getElementById('btn-guardar');
 

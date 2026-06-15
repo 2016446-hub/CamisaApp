@@ -3,18 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylelogin.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Ingreso al sistema</h1>
+    <div class="hero">
+        <h1>Ingreso al sistema</h1>
+        <p>Bienvenido de vuelta. Por favor, ingrese sus credenciales.</p>
+    </div>
 
-    <h2>Escriba su correo</h2>
-    <input type="text" id="correo" placeholder="Escriba su correo">
+    <main class="contenedor">
+        <h2>Escriba su correo</h2>
+        <input type="email" id="correo" placeholder="Escriba su correo">
 
-    <h2>Escriba su contraseña</h2>
-    <input type="password" id="contraseña" placeholder="Escriba su contraseña">
+        <h2>Escriba su clave</h2>
+        <input type="password" id="clave" placeholder="Escriba su clave">
+
+        <input type="button" id="btn-guardar" value="Ingresar">
+        <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    </main>
     <script>
-        
+        const btnGuardar = document.getElementById('btn-guardar');
+
+        btnGuardar.addEventListener('click', async () => {
+        // Obtener colores actuales de cada parte
+        const usuario = {
+            email: document.getElementById('correo').value,
+            clave: document.getElementById('clave').value,
+        };
+        // Enviar via fetch al servidor
+        const resp = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuario)
+        });
+    const data = await resp.json();
+    console.log('Respuesta del servidor:', data);});
     </script>
 </body>
 </html>

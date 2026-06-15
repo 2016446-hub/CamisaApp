@@ -19,12 +19,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'Public')));
 
 // ==========================
-// CONEXIÓN A MONGODB
+// CONEXIÓN A MONGODB LOCAL
 // ==========================
 
 mongoose.connect('mongodb+srv://davidjim0104:DavidJim0104@cluster0.4fvrocz.mongodb.net/?appName=Cluster0')
   .then(() => {
-    console.log('MongoDB conectado correctamente');
+    console.log('MongoDB local conectado correctamente');
   })
   .catch((error) => {
     console.error('Error al conectar con MongoDB:', error);
@@ -141,7 +141,9 @@ app.post('/api/camisetas', async (req, res) => {
       torsoColor,
       mangaIzquierdaColor,
       mangaDerechaColor,
-      cuelloColor
+      cuelloColor,
+      BolsilloColor,
+      TapetaFrontalColor
     } = req.body;
 
     const nuevaCamiseta = new Camiseta({
@@ -151,7 +153,9 @@ app.post('/api/camisetas', async (req, res) => {
       torsoColor,
       mangaIzquierdaColor,
       mangaDerechaColor,
-      cuelloColor
+      cuelloColor,
+      BolsilloColor,
+      TapetaFrontalColor
     });
 
     const camisetaGuardada = await nuevaCamiseta.save();
@@ -203,7 +207,9 @@ app.put('/api/camisetas/:id', async (req, res) => {
       torsoColor,
       mangaIzquierdaColor,
       mangaDerechaColor,
-      cuelloColor
+      cuelloColor,
+      BolsilloColor,
+      TapetaFrontalColor
     } = req.body;
 
     const camisetaActualizada = await Camiseta.findByIdAndUpdate(
@@ -216,6 +222,8 @@ app.put('/api/camisetas/:id', async (req, res) => {
         mangaIzquierdaColor,
         mangaDerechaColor,
         cuelloColor,
+        BolsilloColor,
+        TapetaFrontalColor,
         actualizadoEn: Date.now()
       },
       { new: true, runValidators: true }

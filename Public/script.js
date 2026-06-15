@@ -41,10 +41,15 @@ btnLimpiar.addEventListener('click', () => {
 btnGuardar.addEventListener('click', async () => {
   // Obtener colores actuales de cada parte
   const diseño = {
-    torso: document.getElementById('torso').getAttribute('fill'),
-    mangaIzquierda: document.getElementById('manga-izquierda').getAttribute('fill'),
-    mangaDerecha: document.getElementById('manga-derecha').getAttribute('fill'),
-    cuello: document.getElementById('cuello').getAttribute('fill')
+    nombreDiseno: document.getElementById('nombreDiseno').value.trim(),
+    autor: document.getElementById('autor').value.trim(),
+    descripcion: document.getElementById('descripcion').value.trim(),
+    torsoColor: document.getElementById('torso').getAttribute('fill'),
+    mangaIzquierdaColor: document.getElementById('manga-izquierda').getAttribute('fill'),
+    mangaDerechaColor: document.getElementById('manga-derecha').getAttribute('fill'),
+    cuelloColor: document.getElementById('cuello').getAttribute('fill'),
+    BolsilloColor: document.getElementById('bolsillo').getAttribute('fill'),
+    TapetaFrontalColor: document.getElementById('tapeta-frontal').getAttribute('fill'),
   };
   // Enviar via fetch al servidor
   const resp = await fetch('/api/camisetas', {
@@ -119,7 +124,9 @@ function obtenerDatosFormulario() {
     torsoColor: document.getElementById('torso').getAttribute('fill'),
     mangaIzquierdaColor: document.getElementById('mangaIzquierda').getAttribute('fill'),
     mangaDerechaColor: document.getElementById('mangaDerecha').getAttribute('fill'),
-    cuelloColor: document.getElementById('cuello').getAttribute('fill')
+    cuelloColor: document.getElementById('cuello').getAttribute('fill'),
+    BolsilloColor: document.getElementById('bolsillo').getAttribute('fill'),
+    TapetaFrontalColor: document.getElementById('tapeta-frontal').getAttribute('fill')
   };
 }
 
@@ -180,6 +187,8 @@ async function cargarCamisetas() {
             <div class="color-box" style="background:${camiseta.mangaIzquierdaColor}" title="Manga izquierda"></div>
             <div class="color-box" style="background:${camiseta.mangaDerechaColor}" title="Manga derecha"></div>
             <div class="color-box" style="background:${camiseta.cuelloColor}" title="Cuello"></div>
+            <div class="color-box" style="background:${camiseta.BolsilloColor}" title="Bolsillo"></div>
+            <div class="color-box" style="background:${camiseta.TapetaFrontalColor}" title="Tapeta frontal"></div>
           </div>
         </div>
 
