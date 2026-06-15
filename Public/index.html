@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Camisa Gen 2027</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div>
+      <span class="badge">GEN 2027</span>
+      <h1>Diseñador de Camisa Gen 2027</h1>
+      <p>Crea, guarda, edita y vota por la línea gráfica de la próxima camisa.</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="panel card">
+      <div class="section-title">
+        <h2>Diseña tu camiseta</h2>
+        <p>Selecciona una parte de la camisa y cambia su color.</p>
+      </div>
+
+      <div class="formulario">
+        <input type="hidden" id="camisetaId">
+
+        <label for="nombreDiseno">Nombre del diseño</label>
+        <input type="text" id="nombreDiseno" placeholder="Ej: diseño bien cool ero">
+
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" placeholder="Ej: Mariana D">
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" placeholder="Ej: lindo"></textarea>
+
+        <label for="colorPicker">Color seleccionado</label>
+        <input type="color" id="colorPicker" value="#ffffff">
+
+        <p id="parteActual">Selecciona una parte de la camisa</p>
+
+        <button id="btnGuardar">Guardar diseño</button>
+        <button id="btnActualizar" class="btn-edit oculto">Actualizar diseño</button>
+        <button id="btnCancelar" class="btn-cancel oculto">Cancelar edición</button>
+        <button id="btnLimpiar" class="btn-secondary">Reiniciar colores</button>
+      </div>
+    </section>
+
+    <section class="camiseta-preview card">
+      <div class="camiseta-container">
+<svg id="camiseta-svg" width="300" height="400" viewBox="0 0 300 400">
+
+  <!-- Torso -->
+  <path id="torso" class="parte-camiseta"
+        d="M90 90
+           L60 110
+           L20 180
+           L55 205
+           L55 350
+           Q150 395 245 350
+           L245 205
+           L280 180
+           L240 110
+           L210 90
+           Z"
+        fill="#ffffff"
+        stroke="#000"
+        stroke-width="2"/>
+
+  <!-- Manga Izquierda -->
+  <path id="manga-izquierda" class="parte-camiseta"
+        d="M60 110
+           L20 180
+           L50 205
+           L90 145
+           Z"
+        fill="#ffffff"
+        stroke="#000"
+        stroke-width="2"/>
+
+  <!-- Manga Derecha -->
+  <path id="manga-derecha" class="parte-camiseta"
+        d="M240 110
+           L280 180
+           L250 205
+           L210 145
+           Z"
+        fill="#ffffff"
+        stroke="#000"
+        stroke-width="2"/>
+
+  <!-- Cuello -->
+  <path id="cuello" class="parte-camiseta"
+        d="M120 45
+           Q150 35 180 45
+           L195 90
+           L170 110
+           L150 90
+           L130 110
+           L105 90
+           Z"
+        fill="#ffffff"
+        stroke="#000"
+        stroke-width="2"/>
+
+  <!-- Tapeta frontal -->
+  <rect x="145" y="90" width="10" height="35"
+        fill="#ffffff"
+        stroke="#000"
+        stroke-width="1"/>
+
+  <!-- Bolsillo -->
+  <path id="bolsillo"
+        d="M175 145
+           L215 145
+           L215 200
+           Q215 220 195 220
+           Q175 220 175 200
+           Z"
+        fill="#ffffff"
+        stroke="#000"
+        stroke-width="1.5"/>
+
+  <!-- Costura bolsillo -->
+  <line x1="175" y1="165" x2="215" y2="165"
+        stroke="#000"
+        stroke-width="1"/>
+
+</svg>
+</div>
+    </section>
+
+    <section class="lista-disenos card">
+      <div class="section-title">
+        <h2>Diseños guardados</h2>
+        <p>Administra los diseños registrados en MongoDB.</p>
+      </div>
+
+      <div id="contenedorCamisetas"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #aabeff;
+  --primary-dark: #4338ca;
+  --secondary: #8b5cf6;
+  --accent: #43475f;
+
+  --green: #73ceb0;
+  --orange: #ffd894;
+  --red: #ae5959;
+
+  --white: #ffffff;
+  --bg: #f8fafc;
+  --card: rgba(255, 255, 255, 0.95);
+  --soft: #eef2ff;
+  --border: #dbe4f0;
+
+  --text: #1e293b;
+  --text-light: #64748b;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background:
+    radial-gradient(circle at top left,
+      rgba(99, 102, 241, 0.15),
+      transparent 30%),
+    radial-gradient(circle at bottom right,
+      rgba(6, 182, 212, 0.15),
+      transparent 30%),
+    linear-gradient(135deg, #f8fafc, #eef2ff);
+
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(
+    135deg,
+    #4338ca,
+    #6366f1,
+    #06b6d4
+  );
+
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25);
+}
+
+.badge {
+  display: inline-block;
+
+  background: rgba(255,255,255,0.15);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  font-weight: 700;
+
+  margin-bottom: 16px;
+
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.92);
+  font-size: 16px;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+  width: 90%;
+  max-width: 1180px;
+  margin: 35px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* TARJETAS */
+
+.card {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--card);
+
+  border: 1px solid rgba(219, 228, 240, 0.8);
+
+  border-radius: 26px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(15,23,42,.05);
+
+  backdrop-filter: blur(12px);
+}
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 50%;
+
+  background: rgba(99,102,241,.12);
+
+  top: -60px;
+  right: -60px;
+
+  filter: blur(25px);
+}
+
+/* TITULOS */
+
+.section-title {
+  margin-bottom: 22px;
+}
+
+.section-title h2 {
+  color: var(--primary-dark);
+  font-size: 25px;
+  margin-bottom: 6px;
+}
+
+.section-title p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* FORMULARIO */
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input,
+textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 2px solid var(--border);
+
+  border-radius: 16px;
+
+  background: white;
+
+  outline: none;
+
+  transition: .25s ease;
+
+  color: var(--text);
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 5px rgba(99,102,241,.12);
+}
+
+input[type="color"] {
+  width: 80px;
+  height: 55px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* PARTE ACTUAL */
+
+#parteActual {
+  background: var(--soft);
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  padding: 12px;
+
+  color: var(--primary-dark);
+
+  font-size: 14px;
+}
+
+/* BOTONES */
+
+button {
+  border: none;
+
+  border-radius: 16px;
+
+  padding: 13px 16px;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .25s ease;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+}
+
+button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 24px rgba(99,102,241,.25);
+}
+
+.btn-secondary {
+  background: linear-gradient(
+    135deg,
+    #64748b,
+    #94a3b8
+  );
+}
+
+.btn-edit {
+  background: linear-gradient(
+    135deg,
+    #10b981,
+    #34d399
+  );
+}
+
+.btn-cancel {
+  background: linear-gradient(
+    135deg,
+    #f59e0b,
+    #fbbf24
+  );
+}
+
+.btn-delete {
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #fb7185
+  );
+}
+
+.oculto {
+  display: none;
+}
+
+/* PREVIEW */
+
+.camiseta-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 460px;
+}
+
+#camisetaSvg {
+  width: 100%;
+  max-width: 400px;
+
+  filter:
+    drop-shadow(
+      0 18px 30px rgba(99,102,241,.15)
+    );
+}
+
+.parte-camiseta {
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.parte-camiseta:hover {
+  stroke: var(--primary);
+  stroke-width: 5;
+}
+
+.parte-activa {
+  stroke: var(--secondary);
+  stroke-width: 6;
+}
+
+/* LISTA */
+
+.lista-disenos {
+  grid-column: 1 / 3;
+}
+
+.tarjeta-camiseta {
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 22px;
+
+  padding: 20px;
+
+  margin-top: 16px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 18px;
+
+  align-items: center;
+
+  transition: .25s ease;
+}
+
+.tarjeta-camiseta:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 25px rgba(15,23,42,.08);
+}
+
+.tarjeta-camiseta h3 {
+  color: var(--primary-dark);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.tarjeta-camiseta p {
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.descripcion-card {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* MINI CAMISA */
+
+.mini-camisa {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.color-box {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 12px;
+
+  border: 2px solid rgba(99,102,241,.15);
+}
+
+/* ACCIONES */
+
+.acciones-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.estrellas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.estrellas button {
+  background: linear-gradient(
+    135deg,
+    #f59e0b,
+    #fbbf24
+  );
+
+  padding: 8px 10px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+}
+
+.acciones-crud {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.acciones-crud button {
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
+/* MENSAJE VACIO */
+
+.mensaje-vacio {
+  padding: 18px;
+
+  background: var(--soft);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  color: var(--primary-dark);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-disenos {
+    grid-column: 1;
+  }
+
+  .tarjeta-camiseta {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
