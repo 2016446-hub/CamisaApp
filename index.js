@@ -19,12 +19,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'Public')));
 
 // ==========================
-// CONEXIÓN A MONGODB LOCAL
+// CONEXIÓN A MONGODB
 // ==========================
 
-mongoose.connect('mongodb://localhost:27017/camisaApp')
+mongoose.connect('mongodb+srv://davidjim0104:PhantomThieves3485@cluster0.4fvrocz.mongodb.net/?appName=Cluster0')
   .then(() => {
-    console.log('MongoDB local conectado correctamente');
+    console.log('MongoDB conectado correctamente');
   })
   .catch((error) => {
     console.error('Error al conectar con MongoDB:', error);
