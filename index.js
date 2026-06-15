@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'Public')));
 // CONEXIÓN A MONGODB
 // ==========================
 
-mongoose.connect('mongodb+srv://davidjim0104:PhantomThieves3485@cluster0.4fvrocz.mongodb.net/?appName=Cluster0')
+mongoose.connect('mongodb+srv://davidjim0104:PhantomThieves3485*@cluster0.4fvrocz.mongodb.net/?appName=Cluster0')
   .then(() => {
     console.log('MongoDB conectado correctamente');
   })
